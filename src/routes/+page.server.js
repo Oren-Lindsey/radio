@@ -2,7 +2,7 @@ import * as RadioBrowser from 'radio-browser'
 import * as worldcountries from 'world-countries'
 import { error } from '@sveltejs/kit';
 export async function load(req) {
-    console.log(RadioBrowser)
+    console.log(RadioBrowser.default)
     let countries = getCountries()
     countries.unshift('All')
     let country = req.url.searchParams.get('country')
