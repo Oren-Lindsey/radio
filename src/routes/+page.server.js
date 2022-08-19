@@ -2,7 +2,6 @@ import * as RadioBrowser from 'radio-browser'
 import * as worldcountries from 'world-countries'
 import { error } from '@sveltejs/kit';
 export async function load(req) {
-    console.log(RadioBrowser.default)
     let countries = getCountries()
     countries.unshift('All')
     let country = req.url.searchParams.get('country')
@@ -18,7 +17,7 @@ export async function load(req) {
             limit: 1000000000000
         }
     }
-    const data = await RadioBrowser.getStations(filter)
+    const data = await RadioBrowser.default.getStations(filter)
     let stations = []
     for (let i = 0; i < data.length; i++) {
         if (data[i].geo_lat && data[i].geo_long && ![null,undefined,''].includes(data[i].url_resolved)) {
