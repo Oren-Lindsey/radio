@@ -17,7 +17,7 @@ export async function load(req) {
             limit: 1000000000000
         }
     }
-    console.log(`Exists?: ${RadioBrowser.hasOwnProperty('getStations')}`)
+    console.log(`Exists?: ${RadioBrowser.default.hasOwnProperty('getStations')}`)
     const data = await RadioBrowser.getStations(filter)
     let stations = []
     for (let i = 0; i < data.length; i++) {
