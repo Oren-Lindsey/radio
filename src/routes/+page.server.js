@@ -28,7 +28,8 @@ export async function load(req) {
     return {
         stations: stations,
         countries: countries,
-        selected: country
+        selected: country,
+        radioBrowser: RadioBrowser
     }
 }
 function getCountries() {

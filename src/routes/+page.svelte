@@ -1,5 +1,6 @@
 <script>
     export let data
+    console.log(data.radioBrowser)
     export let errors
     let countries = data.countries
     import {onMount} from 'svelte'
